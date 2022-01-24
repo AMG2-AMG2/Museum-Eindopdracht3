@@ -420,13 +420,13 @@ footer {
   bottom         : right;
   align-items    : center;
   margin-right   : 50%;
-  justify-content: flex-end;
+  justify-content: space-around;
   font-size      : 100%;
 }
 
 footer>p {
-  width       : auto;
-  margin      : 0 auto;
+
+  margin      : 0;
   padding-left: 0px;
 }
 
@@ -467,6 +467,7 @@ footer>p {
 .Reviews {
   border: 2px solid #011c46;
   width : 971px;
+  bottom: 20px;
   height: 510px;
   float : right;
 }
