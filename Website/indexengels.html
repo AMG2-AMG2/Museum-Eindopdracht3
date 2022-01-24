@@ -18,17 +18,20 @@
       <ul>
         <li><img src="IMG/logo2.png" alt="Dit is de logo van de website." class=image_logo2></li>
         <li class="active"><a href="indexengels.html">Home</a></li>
-        <li><a href="indexengels.html">History</a></li>
-        <li><a href="indexengels.html">Exhibiton</a></li>
-        <li><a href="indexengels.html">Interactive</a></li>
-        <li><a href="indexengels.html">Reviews</a></li>
-        <li><a href="indexengels.html">Opening-hours</a></li>
-        <li><a href="indexengels.html">Contact</a></li>
+        <li><a href="indexengels.html#History">History</a></li>
+        <li><a href="indexengels.html#Exhibiton">Exhibiton</a></li>
+        <li><a href="indexengels.html#Interactive">Interactive</a></li>
+        <li><a href="indexengels.html#Reviews2">Reviews</a></li>
+        <li><a href="indexengels.html#Openinghours">Opening-hours</a></li>
+        <li><a href="https://tickets.hetscheepvaartmuseum.nl/nl/tickets">Tickets</a></li>
+        <li><a href="https://www.hetscheepvaartmuseum.nl/contact">Contact</a></li>
         <li><a href="index.html">Netherlands</a></li>
         <li><a href="indexengels.html">English</a></li>
       </ul>
     </nav>
   </header>
+
+  <h1>Scheepvaartmuseum</h1>
 
   <div class="slideshow-container">
 
@@ -81,6 +84,7 @@
       <img class="tweedeImage" src="IMG/Gezicht-op-het-IJ-door-Reinier-Rooms-1664-Scheepvaartmuseum.jpg"
         alt="This is a picture of the ships sailing on the ice.">
       <div class="History">
+        <a id="History"></a>
         <h2>History</h2>
         <h3>
           The Dutch Historical Shipping Association
@@ -104,6 +108,7 @@
       <img class="Image-space-in-the-museum" src="IMG/openingstijden_actieblok_rasterized.jpg"
         alt="This is a picture where an event is being done in the hall.">
       <div class="Exhibiton">
+        <a id="Exhibiton"></a>
         <h2>Exhibiton</h2>
         <h3>west wing</h3>
         <h4>Amsterdam port city</h4>
@@ -171,9 +176,10 @@
       </div>
 
       <div class="Interactive">
+        <a id="Interactive"></a>
         <h2>Interactive</h2>
 
-        <img id="myImage" src="IMG/ingang.jpg" alt="foto sb">
+        <img id="myImage" src="IMG/02.jpg" alt="foto sb">
         <div id="myInteractieve">
           <div id="myTitle">Hier komt de titel</div>
           <input type="text" id="myInput" autocomplete="off">
@@ -182,14 +188,15 @@
         </div>
 
       </div>
-      <div class="Reviews2">
+      <div class="Reviews">
+        <a id="Reviews2"></a>
         <h2>Reviews</h2>
-        
-        <div class="Review-client">
+
+        <div class="Review-klant">
           <h3>Globe-trotter</h3>
-          The Scheepsvaart museum is always very promising. 
+          The Scheepsvaart museum is always very promising.
           It is spacious and the courtyard was this time decorated with the beautiful colorful jellyfish.
-        
+
         </div>
 
 
@@ -198,19 +205,39 @@
     </article>
   </main>
   <script>
-    var slideIndex = 0;
+    let timer
+
+    let slideIndex = 0;
     showSlides();
 
     function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slideIndex++;
       if (slideIndex > slides.length) { slideIndex = 1 }
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 2500);
+      timer = setTimeout(showSlides, 2500);
+
+    }
+    function showSlide() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      if (slideIndex < 1) { slideIndex = slides.length }
+      slides[slideIndex - 1].style.display = "block";
+
+    }
+    function plusSlides(direction) {
+      clearTimeout(timer)
+      console.log(direction)
+      slideIndex = slideIndex + direction;
+      showSlide()
     }
   </script>
 
@@ -224,27 +251,28 @@
     </div>
 
     <div class="Openinghours"></div>
+    <a id="Openinghours"></a>
     Opening hours
     <div>
-    -Closed on Mondays
+      -Closed on Mondays
     </div>
     <div>
-    -Tuesday - 10:00 - 17:00
+      -Tuesday - 10:00 - 17:00
     </div>
     <div>
-    -Wednesday - 10:00 - 17:00
+      -Wednesday - 10:00 - 17:00
     </div>
     <div>
-    -Thursday - 10:00 - 17:00
+      -Thursday - 10:00 - 17:00
     </div>
     <div>
-    -Friday - 10:00 - 17:00
+      -Friday - 10:00 - 17:00
     </div>
     <div>
-    -Saturday 10:00 - 17:00
+      -Saturday 10:00 - 17:00
     </div>
     <div>
-    -Sunday 10:00 - 17:00
+      -Sunday 10:00 - 17:00
     </div>
 
     <div class="ticket kosten">
@@ -253,6 +281,7 @@
       18 years 16.50 Euro
     </div>
 
+    <h3 class="coppy">© Het Scheepvaartmuseum 2021</h3>
   </footer>
 
   <a class="top" href="#top"> Top </a>

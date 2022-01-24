@@ -16,17 +16,20 @@
       <ul>
         <li><img src="IMG/logo2.png" alt="Dit is de logo van de website." class=image_logo></li>
         <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="index.html">Geschiedenis</a></li>
-        <li><a href="index.html">Tentoonstelling</a></li>
-        <li><a href="index.html">Interactieve</a></li>
-        <li><a href="index.html">Reviews</a></li>
-        <li><a href="index.html">Openingstijden</a></li>
-        <li><a href="index.html">Contact</a></li>
+        <li><a href="index.html#geschiedenis">Geschiedenis</a></li>
+        <li><a href="index.html#tentoonstelling">Tentoonstelling</a></li>
+        <li><a href="index.html#Interactieve">Interactieve</a></li>
+        <li><a href="index.html#Reviews">Reviews</a></li>
+        <li><a href="index.html#Openingstijden">Openingstijden</a></li>
+        <li><a href="https://tickets.hetscheepvaartmuseum.nl/nl/tickets">Tickets</a></li>
+        <li><a href="https://www.hetscheepvaartmuseum.nl/contact">Contact</a></li>
         <li><a href="index.html">Nederlands</a></li>
         <li><a href="indexengels.html">Engels</a></li>
       </ul>
     </nav>
   </header>
+
+  <h1 class="h1">Scheepvaartmuseum</h1>
 
   <div class="slideshow-container">
 
@@ -79,6 +82,7 @@
       <img class="tweedeImage" src="IMG/Gezicht-op-het-IJ-door-Reinier-Rooms-1664-Scheepvaartmuseum.jpg"
         alt="Dit is een foto waar de schepen op het ij varen.">
       <div class="Geschiedenis">
+        <a id="geschiedenis"></a>
         <h2>Geschiedenis</h2>
         <h3>
           De Vereeniging Nederlandsch Historisch Scheepvaart
@@ -97,11 +101,12 @@
           in Amsterdam. kroonprinses Beatrix der Nedderlanden
           heropende het museum in april van dat jaar op de nieuwe
           locatie.
-      </h3>
+        </h3>
       </div>
       <img class="Image-ruimte-in-de-museum" src="IMG/openingstijden_actieblok_rasterized.jpg"
         alt="Dit is een foto waar er een evenement wordt gedaan in de hal.">
       <div class="Tentoonstelling">
+        <a id="tentoonstelling"></a>
         <h2>Tentoonstelling</h2>
         <h3>Westvleugel</h3>
         <h4>Amsterdam havenstad</h4>
@@ -165,18 +170,19 @@
         Een Maleis manuscript uit de collectie werd in 1922 door M.S.
         (Saleh) Neirabatij geschreven en is te zien in een mini-tentoonstelling in Het Scheepvaartmuseum en online
         toegankelijk.
-        
+
         Dit zijn de Tentoonstellingen die er nog aan komen in het kort alles onder elkaar
-    
-        
+
+
 
 
       </div>
 
       <div class="Interactieve">
+        <a id="Interactieve"></a>
         <h2>Interactieve</h2>
 
-        <img id="myImage" src="IMG/ingang.jpg" alt="Foto museum">
+        <img id="myImage" src="IMG/02.jpg" alt="Foto museum">
         <div id="myInteractieve">
           <div id="myTitle">Hier komt de titel</div>
           <input type="text" id="myInput" autocomplete="off">
@@ -187,75 +193,98 @@
       </div>
 
       <div class="Reviews">
+        <a id="Reviews"></a>
         <h2>Reviews</h2>
 
         <div class="Review-klant">
           <h3>WereldReiziger</h3>
-          Het Scheepsvaart museum is altijd veel belovend. 
+          Het Scheepsvaart museum is altijd veel belovend.
           Het is er ruim en de binnenplaats was ditmaal met de prachtige kleurrijke kwallen versierd.
-        
+
         </div>
       </div>
 
     </article>
   </main>
   <script>
-    var slideIndex = 0;
+    let timer
+
+    let slideIndex = 0;
     showSlides();
 
     function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
       for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slideIndex++;
       if (slideIndex > slides.length) { slideIndex = 1 }
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 2500);
+      timer = setTimeout(showSlides, 2500);
+
+    }
+    function showSlide() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      if (slideIndex < 1) { slideIndex = slides.length }
+      slides[slideIndex - 1].style.display = "block";
+
+    }
+    function plusSlides(direction) {
+      clearTimeout(timer)
+      console.log(direction)
+      slideIndex = slideIndex + direction;
+      showSlide()
     }
   </script>
 
-<footer>
-  <p>Gemaakt door Halil Dogan / Amir Crljenkovic</p>
+  <footer>
+    <p>Gemaakt door Halil Dogan / Amir Crljenkovic</p>
 
-  <div class="adres">
-    Adres
-    -Katten burgerplein 1
-    -1018 KK Amsterdam
-  </div>
+    <div class="adres">
+      Adres
+      -Katten burgerplein 1
+      -1018 KK Amsterdam
+    </div>
 
-  <div class="Openingstijden"></div>
-  Openingstijden
-  <div>
-  -Maandag gesloten
-  </div>
-  <div>
-  -Dinsdag - 10:00 - 17:00
-  </div>
-  <div>
-  -Woensdag - 10:00 - 17:00
-  </div>
-  <div>
-  -Donderdag - 10:00 - 17:00
-  </div>
-  <div>
-  -Vrijdag - 10:00 - 17:00
-  </div>
-  <div>
-  -Zaterdag 10:00 - 17:00
-  </div>
-  <div>
-  -Zondag 10:00 - 17:00
-  </div>
+    <div class="Openingstijden"></div>
+    <a id="Openingstijden"></a>
+    Openingstijden
+    <div>
+      -Maandag gesloten
+    </div>
+    <div>
+      -Dinsdag - 10:00 - 17:00
+    </div>
+    <div>
+      -Woensdag - 10:00 - 17:00
+    </div>
+    <div>
+      -Donderdag - 10:00 - 17:00
+    </div>
+    <div>
+      -Vrijdag - 10:00 - 17:00
+    </div>
+    <div>
+      -Zaterdag 10:00 - 17:00
+    </div>
+    <div>
+      -Zondag 10:00 - 17:00
+    </div>
 
-  <div class="ticket kosten">
-    Ticket Prijzen
-    4 to 17 Jaar 8 Euro
-    18 Jaar 16.50 Euro
-  </div>
+    <div class="ticket kosten">
+      Ticket Prijzen
+      4 to 17 Jaar 8 Euro
+      18 Jaar 16.50 Euro
+    </div>
 
-</footer>
+    <h3 class="coppy">© Het Scheepvaartmuseum 2021</h3>
+  </footer>
 
   <a class="top" href="#top"> Top </a>
   <script src="script.js"></script>
